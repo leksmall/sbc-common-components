@@ -13,7 +13,7 @@ jest.mock('../../src/services/fee.services')
 
 describe('SbcFeeSummary.vue', () => {
   it('renders page .msg when passed', () => {
-    let mockDetails = [{ 'filing_type': 'Change of Director', 'filing_type_code': 'OTADD', 'filing_fees': 55, 'service_fees': 0, 'fee': 0, 'tax': { 'gst': 0, 'pst': 0 } }]
+    let mockDetails = [{ 'filingType': 'Change of Director', 'filingTypeCode': 'OTADD', 'filingFees': 55, 'serviceFees': 0, 'fee': 0, 'tax': { 'gst': 0, 'pst': 0 } }]
     FeeService.getFee = jest.fn().mockResolvedValue(mockDetails)
 
     const filingData = [{
@@ -34,7 +34,7 @@ describe('SbcFeeSummary.vue', () => {
   })
 
   it('setting props works', () => {
-    let mockDetails = [{ 'filing_type': 'Change of Director', 'filing_type_code': 'OTADD', 'filing_fees': 55, 'service_fees': 0, 'fee': 0, 'tax': { 'gst': 0, 'pst': 0 } }]
+    let mockDetails = [{ 'filingType': 'Change of Director', 'filingTypeCode': 'OTADD', 'filingFees': 55, 'serviceFees': 0, 'fee': 0, 'tax': { 'gst': 0, 'pst': 0 } }]
     FeeService.getFee = jest.fn().mockResolvedValue(mockDetails)
 
     const filingData = [{
@@ -52,7 +52,7 @@ describe('SbcFeeSummary.vue', () => {
   })
 
   it('fires service calls', () => {
-    let mockDetails = [{ 'filing_type': 'Change of Director', 'filing_type_code': 'OTADD', 'filing_fees': 55, 'service_fees': 0, 'fee': 0, 'tax': { 'gst': 0, 'pst': 0 } }]
+    let mockDetails = [{ 'filingType': 'Change of Director', 'filingTypeCode': 'OTADD', 'filingFees': 55, 'serviceFees': 0, 'fee': 0, 'tax': { 'gst': 0, 'pst': 0 } }]
     FeeService.getFee = jest.fn().mockResolvedValue(mockDetails)
 
     const filingData = [{

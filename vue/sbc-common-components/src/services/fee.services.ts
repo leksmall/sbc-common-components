@@ -29,9 +29,9 @@ export default {
           .map(response => response.data)
           .map(data => {
             // @ts-ignore
-            let clientPassedDesc = filingData.find(fee => fee.filingTypeCode === data.filing_type_code).filingDescription
-            data.filingType = !clientPassedDesc ? data.filing_type : clientPassedDesc// just defaulting the title if client hasnt passed this on
-            data.fee = data.filing_fees + data.service_fees + data.processing_fees + data.tax.gst + data.tax.pst// total fees is a sum of filing_fees,service_fees,processing_fees , gst , pst
+            let clientPassedDesc = filingData.find(fee => fee.filingTypeCode === data.filingTypeCode).filingDescription
+            data.filingType = !clientPassedDesc ? data.filingType : clientPassedDesc// just defaulting the title if client hasnt passed this on
+            data.fee = data.filingFees + data.serviceFees + data.processingFees + data.tax.gst + data.tax.pst// total fees is a sum of filingFees,serviceFees,processingFees , gst , pst
             return data
           })
       }))
