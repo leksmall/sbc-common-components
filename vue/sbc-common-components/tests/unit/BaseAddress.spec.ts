@@ -20,6 +20,7 @@ import BaseAddress from '@/components/BaseAddress.vue'
 
 Vue.use(Vuetify)
 
+let vuetify = new Vuetify({});
 // Boilerplate to prevent the complaint "[Vuetify] Unable to locate target [data-app]"
 const app: HTMLDivElement = document.createElement('div')
 app.setAttribute('data-app', 'true')
@@ -68,13 +69,13 @@ function getLastEvent (wrapper: Wrapper<BaseAddress>, name: string): any {
  * @return a Wrapper<BaseAddress> object with the given parameters.
  */
 function createComponent (address: object = { ...basicAddress }, editing: boolean = true): Wrapper<BaseAddress> {
-  return mount(BaseAddress, { propsData: { 'address': address, 'editing': editing } })
+  return mount(BaseAddress, {vuetify, propsData: { 'address': address, 'editing': editing } })
 }
 
 describe('BaseAddress.vue', () => {
   it('handles no address', () => {
     // Don't use createComponent, do it manually so the property can be missing.
-    const wrapper: Wrapper<BaseAddress> = mount(BaseAddress)
+    const wrapper: Wrapper<BaseAddress> = mount(BaseAddress,{vuetify})
 
     // The last "valid" event should indicate that the address is not valid.
     expect(wrapper.emitted().valid).toBeDefined()
@@ -83,7 +84,7 @@ describe('BaseAddress.vue', () => {
 
   it('handles an undefined address', () => {
     // Don't use createComponent, do it manually so the property can be undefined.
-    const wrapper: Wrapper<BaseAddress> = mount(BaseAddress, {
+    const wrapper: Wrapper<BaseAddress> = mount(BaseAddress, {vuetify,
       propsData: { address: undefined }
     })
 

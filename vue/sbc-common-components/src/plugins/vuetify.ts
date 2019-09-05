@@ -15,3 +15,5 @@ Vue.use(Vuetify, {
     VIcon
   }
 })
+
+export default new Vuetify({})

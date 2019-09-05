@@ -22,43 +22,52 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="stylus" scoped>
-  @import "../assets/styl/theme.styl"
+<style lang="scss" scoped>
+  @import "../assets/scss/theme.scss";
 
-  .app-footer
-    background-color $BCgovBlue5
-    font-size 0.9375rem
+  .app-footer{
+    background-color: $BCgovBlue5;
+    font-size: 0.9375rem;
+  }
 
-  nav
-    ul
-      margin -0.5rem
-      padding 0
-      list-style-type none
+  nav{
+    ul{
+      margin: -0.5rem;
+      padding: 0;
+      list-style-type: none
+    }
 
-    li
-      display inline-block
-      margin-right 0.25rem
+    li{
+      display: inline-block;
+      margin-right: 0.25rem;
 
-      a
-        display block
-        padding 0.25rem 0.5rem
-        color #fff
-        text-decoration none
+      a{
+        display: block;
+        padding: 0.25rem 0.5rem;
+        color: #fff;
+        text-decoration: none;
 
-        &:hover
-          text-decoration underline
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    li:last-child{
+      margin-right: 0;
+      border-right: none
+    }
+  }
+  @media (min-width: 960px){
+    nav{
+      li {
+        margin-right: 0.5rem;
+        padding-right: 0.5rem;
+        border-right: 1px solid $BCgovBlue3;
 
-    li:last-child
-      margin-right 0
-      border-right none 
-
-  @media (min-width: 960px)
-    nav
-      li 
-        margin-right 0.5rem
-        padding-right 0.5rem
-        border-right 1px solid $BCgovBlue3
-
-        a 
-          padding 0.25rem 0.5rem
+        a {
+          padding: 0.25rem 0.5rem
+        }
+      }
+    }
+  }
 </style>

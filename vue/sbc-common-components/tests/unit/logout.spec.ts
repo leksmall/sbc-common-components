@@ -1,56 +1,53 @@
-import SBCHeader from '@/components/SbcHeader.vue'
-import Vuex from 'vuex'
-import { mount, createLocalVue } from '@vue/test-utils'
-import Vue from 'vue'
-import Vuetify from 'vuetify'
-import VueRouter from 'vue-router'
-import AuthServices from '../../src/services/auth.services'
-import axios from 'axios'
+import SBCHeader from "@/components/SbcHeader.vue";
+import Vuex from "vuex";
+import { mount, createLocalVue } from "@vue/test-utils";
+import Vue from "vue";
+import Vuetify from "vuetify";
+import VueRouter from "vue-router";
 
-Vue.use(Vuetify)
-Vue.use(VueRouter)
+Vue.use(Vuetify);
+Vue.use(VueRouter);
 
-jest.mock('axios', () => ({
-  post: jest.fn(() => Promise.resolve({ data: { access_token: 'abcd', refresh_token: 'efgh', registries_trace_id: '12345abcde' } }))
-}))
+jest.mock("axios", () => ({
+  post: jest.fn(() =>
+    Promise.resolve({data: {access_token: "abcd", refresh_token: "efgh", registries_trace_id: "12345abcde"}})
+  )
+}));
 
-describe('SbcHeader.vue', () => {
-  let cmp
+describe("SbcHeader.vue", () => {
+  let cmp;
 
   beforeEach(() => {
-    const localVue = createLocalVue()
-    localVue.use(Vuex)
+    sessionStorage.setItem("KEYCLOAK_TOKEN", "abcd");
+
+    const localVue = createLocalVue();
+    localVue.use(Vuex);   
+    
+    let vuetify = new Vuetify({});
 
     const store = new Vuex.Store({
-      modules: {
-        logout: {
-
-        }
-      }
-    })
-    const $t = () => {
-      sessionStorage.setItem('KEYCLOAK_TOKEN', 'abcd')
-    }
+      modules: {logout: {}}});
+     
     cmp = mount(SBCHeader, {
       store,
       localVue,
-      mocks: { $t }
-    })
+      vuetify
+    });
 
-    jest.resetModules()
-    jest.clearAllMocks()
-  })
+    jest.resetModules();
+    jest.clearAllMocks();
+  });
 
-  // sing shouldnt exist
-  it('logout/in button exists', () => {
-    expect(cmp.find('.v-btn').text().startsWith('Sign')).toBeTruthy()
-    expect(cmp.isVueInstance()).toBeFalsy()
-  })
+  // Sign in shouldnt exist
+  it("logout/in button exists", () => {    
+    expect(cmp.find(".v-btn").text().startsWith("Sign")).toBeTruthy();
+    expect(cmp.isVueInstance()).toBeTruthy();
+  });
 
-  it('logout/in button click invokes logout method', () => {
-    const stub = jest.fn()
-    cmp.setMethods({ logout: stub })
-    cmp.find('.v-btn').trigger('click')
-    expect(cmp.vm.logout).toBeCalled()
-  })
-})
+  it("logout/in button click invokes logout method", () => {
+    const stub = jest.fn();
+    cmp.setMethods({ logout: stub });
+    cmp.find(".v-btn").trigger("click");
+    expect(cmp.vm.logout).toBeCalled();
+  });
+});

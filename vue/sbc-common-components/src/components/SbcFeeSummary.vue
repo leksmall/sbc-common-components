@@ -9,7 +9,7 @@
                     :value="true"
                     color="error"
                     icon="warning"
-                    outline
+                    outlined
             >{{fetchError}}
             </v-alert>
 
@@ -97,54 +97,65 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-    @import "../assets/styl/theme.styl"
-    header
-        color #fff
-        background $BCgovBlue5
+<style lang="scss" scoped>
+    @import "../assets/scss/theme.scss";
+    header{
+        color: #fff;
+        background: $BCgovBlue5
+    }
 
-    .container
-        display flex
-        flex-flow row nowrap
-        line-height 1.2rem
-        font-size 0.875rem
+    .container{
+        display: flex;
+        flex-flow: row nowrap;
+        line-height: 1.2rem;
+        font-size: 0.875rem;
+    }
 
-    .fee-list
-        border-bottom 1px solid $gray3
+    .fee-list{
+        border-bottom: 1px solid $gray3;
+    }
 
-    .fee-list__item
-        &-name,
-        &-value
-            font-weight 700
+    .fee-list__item{
+        &-name, &-value{
+            font-weight: 700;
+        }
 
-        &-name
-            flex 1 1 auto
-            margin-right 2rem
+        &-name{
+            flex: 1 1 auto;
+            margin-right: 2rem
+        }
 
-        &-value
-            flex 0 0 auto
-            text-align right
+        &-value{
+            flex: 0 0 auto;
+            text-align: right
+        }
+    }
 
-    .fee-list__item + .fee-list__item
-        border-top 1px solid $gray3
+    .fee-list__item + .fee-list__item{
+        border-top: 1px solid $gray3
+    }
 
-    .fee-total
-        align-items center
-        letter-spacing -0.01rem
-        line-height auto
+    .fee-total{
+        align-items: center;
+        letter-spacing: -0.01rem;
+        line-height: auto;
 
-        &__name
-            flex 1 1 auto
-            margin-right auto
-            font-weight 700
+        &__name{
+            flex: 1 1 auto;
+            margin-right: auto;
+            font-weight: 700;
+        }
 
-        &__currency
-            margin-right 0.5rem
-            color $gray5
-            font-weight 500
+        &__currency{
+            margin-right: 0.5rem;
+            color: $gray5;
+            font-weight: 500;
+        }
 
-        &__value
-            font-size 1.65rem
-            font-weight 700
+        &__value{
+            font-size: 1.65rem;
+            font-weight: 700;
+        }
+    }
 
 </style>

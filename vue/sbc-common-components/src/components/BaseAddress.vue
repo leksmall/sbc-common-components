@@ -51,7 +51,7 @@
       >
         <div class="form__row">
           <v-text-field autocomplete="address-complete"
-                        box
+                        filled
                         label="Street Address"
                         name="street-address"
                         v-model="addressLocal.streetAddress"
@@ -60,14 +60,14 @@
           ></v-text-field>
         </div>
         <div class="form__row">
-          <v-text-field box
+          <v-text-field filled
                         label="Additional Street Address (Optional)"
                         name="street-address-additional"
                         v-model="addressLocal.streetAddressAdditional"
           ></v-text-field>
         </div>
         <div class="form__row three-column">
-          <v-text-field box
+          <v-text-field filled
                         class="item"
                         label="City"
                         name="address-city"
@@ -75,7 +75,7 @@
                         v-model="addressLocal.addressCity"
                         :rules="cityRules"
           ></v-text-field>
-          <v-select box
+          <v-select filled
                     class="item"
                     label="Province"
                     name="address-region"
@@ -83,7 +83,7 @@
                     :items="regions"
                     :rules="regionRules"
           ></v-select>
-          <v-text-field box
+          <v-text-field filled
                         class="item"
                         label="Postal Code"
                         name="postal-code"
@@ -93,7 +93,7 @@
           ></v-text-field>
         </div>
         <div class="form__row">
-          <v-text-field box
+          <v-text-field filled
                         label="Country"
                         name="address-country"
                         required
@@ -103,7 +103,7 @@
         </div>
         <div class="form__row">
           <v-textarea auto-grow
-                      box
+                      filled
                       label="Delivery Instructions (Optional)"
                       name="delivery-instructions"
                       rows="2"
@@ -367,47 +367,56 @@ export default class BaseAddress extends Vue {
 
 </script>
 
-<style scoped lang="stylus">
+<style scoped lang="scss">
 
-  @import "../../src/assets/styl/theme.styl"
+  @import "../../src/assets/scss/theme.scss";
 
-  .meta-container
-    display flex
-    flex-flow column nowrap
-    position relative
+  .meta-container{
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+  }
 
-  .validationError
-    border-color red
-    border-radius .3rem
-    border-style groove
-    border-width thin
+  .validationError{
+    border-color: red;
+    border-radius: .3rem;
+    border-style: groove;
+    border-width: thin;
+  }
 
-  .validationErrorInfo
-    color red
+  .validationErrorInfo{
+    color: red;
+  }
 
-  @media (min-width 768px)
-    .meta-container
-      flex-flow row nowrap
+  @media (min-width: 768px){
+    .meta-container{
+      flex-flow: row nowrap
+    }
+  }
 
   // Address Block Layout
-  .address-block
-    display flex
+  .address-block{
+    display: flex;
+  }
 
-  .address-block__info
-    flex 1 1 auto
+  .address-block__info{
+    flex: 1 1 auto;
+  }
 
   // Form Row Elements
-  .form__row.three-column
-    align-items stretch
-    display flex
-    flex-flow row nowrap
-    margin-left -0.5rem
-    margin-right -0.5rem
+  .form__row.three-column{
+    align-items: stretch;
+    display: flex;
+    flex-flow: row nowrap;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
 
-    .item
-      flex 1 1 auto
-      flex-basis 0
-      margin-left 0.5rem
-      margin-right 0.5rem
+    .item{
+      flex: 1 1 auto;
+      flex-basis: 0;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+    }
+  }
 
 </style>

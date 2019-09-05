@@ -27,7 +27,7 @@
     ></v-text-field>
     <v-text-field
       label="Box"
-      box
+      filled
     ></v-text-field>
   </div>
 </template>

@@ -55,31 +55,42 @@ export default class SbcSystemError extends Vue {
 }
 </script>
 
-<style lang="stylus" scoped>
-    @import '../assets/styl/theme.styl';
-    @import '../assets/styl/overrides.styl';
-    article
-        .v-card
+<style lang="scss" scoped>
+    @import '../assets/scss/theme.scss';
+    @import '../assets/scss/overrides.scss';
+    article{
+        .v-card{
             line-height: 1.2rem;
             font-size: 0.875rem;
-    section p
+        }
+    }
+    section p{
         // font-size 0.875rem
         color: $gray6;
-    section + section
+    }
+    section + section{
         margin-top: 3rem;
-    h2
+    }
+    h2{
         margin-bottom: 0.25rem;
-    .title-container
+    }
+    .title-container{
         margin-bottom: 0.5rem;
-    #buttons-container
+    }
+    #buttons-container{
         padding-top: 2rem;
         border-top: 1px solid $gray5;
-        .buttons-left
+        .buttons-left{
             width: 50%;
-        .buttons-right
-            margin-left auto
-        .v-btn + .v-btn
+        }
+        .buttons-right{
+            margin-left: auto;
+        }
+        .v-btn + .v-btn{
             margin-left: 0.5rem;
-    .error-dialog-padding
+        }
+    }
+    .error-dialog-padding{
         margin-left: 1rem;
+    }
 </style>

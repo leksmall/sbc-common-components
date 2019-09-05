@@ -25,27 +25,30 @@ export default class SbcSystemBanner extends Vue {
 }
 </script>
 
-<style lang="stylus" scoped>
-    .v-alert
-        margin 0
-        padding 0
-        overflow hidden
-        border none
-        z-index 2
+<style lang="scss" scoped>
+    .v-alert{
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border: none;
+        z-index: 2;
+    }
 
-    .system-alert__inner
-        position relative
-        display flex
-        align-items center
-        padding 1.15rem 1.5rem
+    .system-alert__inner{
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 1.15rem 1.5rem;
+    }
 
-    .system-alert__icon
-
+    .system-alert__icon{
         position: absolute;
-        top 1rem
-        left 1.5rem
+        top: 1rem;
+        left: 1.5rem;
+    }
 
-    .system-alert__msg
-        margin-left 2.5rem
-        font-weight 500
+    .system-alert__msg{
+        margin-left: 2.5rem;
+        font-weight: 500;
+    }
 </style>

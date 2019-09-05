@@ -30,33 +30,40 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="stylus">
-  $app-header-height = 70px // 70px
+<style lang="scss">
+  $app-header-height : 70px; // 70px
 
-  .layout-wrapper
-    display flex
-    flex-flow column nowrap
-    min-height 100vh
+  .layout-wrapper{
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+  }
 
-  .app-header
-    flex 0 0 auto
-    height $app-header-height
-    z-index 2
+  .app-header{
+    flex: 0 0 auto;
+    height: $app-header-height;
+    z-index: 2;
+  }
 
-  .app-body
-    flex 1 1 auto
-    margin-top $app-header-height // Offset the height of the fixed header
+  .app-body{
+    flex: 1 1 auto;
+    margin-top: $app-header-height; // Offset the height of the fixed header
+  }
 
-  @media (min-width 1264px)
+  @media (min-width: 1264px){
     .app-body__inner
-      > .container:first-child
-        padding-top 3rem
-        padding-bottom 3rem
+      > .container:first-child{
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+  }
 
-  .app-footer
-    flex 0 0 auto
+  .app-footer{
+    flex: 0 0 auto
+  }
 
-  .container
-    max-width 1200px
-    padding 1.5rem
+  .container{
+    max-width: 1200px;
+    padding: 1.5rem
+  }
 </style>
