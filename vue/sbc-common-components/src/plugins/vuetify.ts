@@ -4,7 +4,8 @@ import Vue from 'vue'
 import Vuetify, {
   VAlert,
   VContainer,
-  VIcon
+  VIcon,
+  VBtn
 } from 'vuetify/lib'
 
 Vue.use(Vuetify, {
@@ -12,7 +13,8 @@ Vue.use(Vuetify, {
   components: {
     VAlert,
     VContainer,
-    VIcon
+    VIcon,
+    VBtn
   }
 })
 

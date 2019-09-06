@@ -15,7 +15,7 @@
         <span class="brand__title">BC Registries <span class="brand__title--wrap">& Online Services</span></span>
       </a>
       <div class="app-header__actions">
-        <button class="v-btn v-btn--outline v-btn--depressed" v-if="authorized" @click="logout">Sign Out</button>
+        <v-btn outlined color="#ffffff" v-if="authorized" @click="logout">Sign Out</v-btn>
       </div>
     </div>
   </header>
